@@ -1,4 +1,16 @@
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Root URL'
+        required: true
+        type: string
+      pattern:
+        description: 'Provide pattern to match children urls'
+        required: false
+        type: string
+  
+
 
 jobs:
   install:
@@ -8,4 +20,5 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g pa11y-ci
-      - run: pa11y-ci --help
+      - run: pa11y-ci ${{ inputs.url }}
+ 
