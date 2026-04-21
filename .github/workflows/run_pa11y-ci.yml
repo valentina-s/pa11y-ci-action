@@ -26,6 +26,10 @@ jobs:
             libnss3 libatk-bridge2.0-0 libgtk-3-0 \
             libx11-xcb1 libxcomposite1 libxdamage1 \
             libxrandr2 libgbm1 libasound2t64
+      - name: Disable AppArmor User Namespace Restrictions, required to open
+          Chrome on Ubuntu 23.10+ without --no-sandbox). See
+          https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md.
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
             
       - name: Install pa11y-ci
         run: npm install -g pa11y-ci
