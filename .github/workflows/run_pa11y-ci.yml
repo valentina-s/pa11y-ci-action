@@ -1,0 +1,11 @@
+on: workflow_dispatch
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npm install -g pa11y-ci
+      - run: pa11y-ci --help
