@@ -5,8 +5,8 @@ on:
         description: 'Root URL'
         required: true
         type: string
-      pattern:
-        description: 'Provide pattern to match children urls'
+      args:
+        description: 'Provide extra args to the pa11y-ci command'
         required: false
         type: string
   
@@ -34,5 +34,5 @@ jobs:
       - name: Install pa11y-ci
         run: npm install -g pa11y-ci
       - name: Run pa11y-ci
-        run: pa11y-ci ${{ inputs.url }}
+        run: pa11y-ci ${{ inputs.url }}.sitemap.xml ${{ inputs.args}}
  
