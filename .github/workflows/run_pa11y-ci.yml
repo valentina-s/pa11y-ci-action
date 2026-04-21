@@ -34,5 +34,5 @@ jobs:
       - name: Install pa11y-ci
         run: npm install -g pa11y-ci
       - name: Run pa11y-ci
-        run: pa11y-ci ${{ inputs.url }}/sitemap.xml ${{ inputs.args}}
+        run: pa11y-ci --sitemap ${{ inputs.url }}/sitemap.xml ${{ inputs.args}}
  
