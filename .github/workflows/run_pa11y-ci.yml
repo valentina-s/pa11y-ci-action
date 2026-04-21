@@ -20,5 +20,5 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g pa11y-ci
-      - run: pa11y-ci --chrome-launch-config='{"args":["--no-sandbox","--disable-setuid-sandbox"]}' ${{ inputs.url }}
+      - run: pa11y-ci ${{ inputs.url }}
  
