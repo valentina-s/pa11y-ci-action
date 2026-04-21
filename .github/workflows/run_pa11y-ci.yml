@@ -20,5 +20,6 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g pa11y-ci
+      - run: pa11y-ci --version
       - run: pa11y-ci --no-sandbox ${{ inputs.url }}
  
