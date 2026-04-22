@@ -4,4 +4,4 @@ Action to run [`pa11y-ci`](https://github.com/pa11y/pa11y-ci) for a specific web
 To run `pa11y-ci`:
 1. go to Actions (top tabs)
 2. in the left panel Workflows, click on `.github/workflows/run_pa11y-ci.yml`
-3. Click `Run workflow` and pass the url as an argument, e.g. `https://uw-echpace.github.io`.
+3. Click `Run workflow` and pass the url as an argument, e.g. `https://uw-echppace.github.io`.
