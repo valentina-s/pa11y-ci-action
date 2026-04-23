@@ -1,0 +1,38 @@
+on: 
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Root URL'
+        required: true
+        type: string
+      args:
+        description: 'Provide extra args to the pa11y-ci command'
+        required: false
+        type: string
+  
+
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Install Chromium Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk-bridge2.0-0 libgtk-3-0 \
+            libx11-xcb1 libxcomposite1 libxdamage1 \
+            libxrandr2 libgbm1 libasound2t64
+      - name: Disable AppArmor User Namespace Restrictions, required to open
+          Chrome on Ubuntu 23.10+ without --no-sandbox). See
+          https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md.
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+            
+      - name: Install pa11y-ci
+        run: npm install -g pa11y-ci
+      - name: Run pa11y-ci
+        run: pa11y-ci ${{ inputs.url }}
+ 
