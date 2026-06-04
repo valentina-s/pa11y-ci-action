@@ -16,6 +16,6 @@ To run `pa11y-ci`:
 
    <img width="1479" height="712" alt="Screenshot 2026-06-04 at 1 30 02 PM" src="https://github.com/user-attachments/assets/20ced9ab-e58c-471b-a7a5-efd7bb58b724" />
 
-
+If people can also adapt these workflows to set up a regularly scheduled GitHub Action to check their website.
 
    
