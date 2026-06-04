@@ -14,5 +14,8 @@ To run `pa11y-ci`:
 2. In the left panel Workflows, click on the corresponding `.yml` file.
 3. Click `Run workflow` and pass the url as an argument, e.g. `https://uw-echospace.github.io`.
 
+   <img width="1479" height="712" alt="Screenshot 2026-06-04 at 1 30 02 PM" src="https://github.com/user-attachments/assets/20ced9ab-e58c-471b-a7a5-efd7bb58b724" />
+
+
 
    
